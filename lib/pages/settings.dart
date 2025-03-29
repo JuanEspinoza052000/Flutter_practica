@@ -35,15 +35,14 @@ class UserOption extends StatelessWidget {
       ),
       child: Center(
         child: SingleChildScrollView(
-          // Permite que el contenido sea desplazable si es necesario
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               _buildProfileImage(),
-              SizedBox(height: 20), // Espacio entre la foto y el nombre
+              SizedBox(height: 20), // Espacio
               _buildUserName(),
-              SizedBox(height: 30), // Espacio entre el nombre y el menú
+              SizedBox(height: 30), // Espacio
               _buildMenuList(context),
             ],
           ),
@@ -52,7 +51,7 @@ class UserOption extends StatelessWidget {
     );
   }
 
-  // Función para mostrar la imagen de perfil con sombra y borde redondeado
+  // Función para mostrar la imagen de perfil
   Widget _buildProfileImage() {
     return Container(
       decoration: BoxDecoration(
@@ -60,15 +59,14 @@ class UserOption extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black26, // Color de la sombra
-            blurRadius: 8, // Difusión de la sombra
+            blurRadius: 8, //blur
             offset: Offset(0, 4), // Desplazamiento de la sombra
           ),
         ],
       ),
       child: CircleAvatar(
-        radius: 50, // Tamaño del icono (foto de perfil)
-        backgroundImage: NetworkImage(
-            'https://link-a-tu-imagen.com/foto.jpg'), // Enlace a la foto de perfil
+        radius: 50, // Tamano del circulo
+        backgroundImage: NetworkImage('https://link-a-tu-imagen.com/foto.jpg'),
       ),
     );
   }
@@ -126,13 +124,13 @@ class UserOption extends StatelessWidget {
           context,
           icon: Icons.dark_mode,
           title: 'Modo oscuro',
-          route: '', // Aquí puedes agregar funcionalidad más adelante
+          route: '',
         ),
       ],
     );
   }
 
-  // Función para construir cada ListTile con borde redondeado y sombra
+  // Función
   Widget _buildListTile(BuildContext context,
       {required IconData icon, required String title, required String route}) {
     return Container(
@@ -141,16 +139,15 @@ class UserOption extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black12, // Color de la sombra
-            blurRadius: 6, // Difusión de la sombra
-            offset: Offset(2, 2), // Desplazamiento de la sombra
+            color: Colors.black12,
+            blurRadius: 6,
+            offset: Offset(2, 2),
           ),
         ],
       ),
       child: ListTile(
         shape: RoundedRectangleBorder(
-          borderRadius:
-              BorderRadius.circular(12), // Bordes redondeados para el ListTile
+          borderRadius: BorderRadius.circular(12), // Bordes redondeados
         ),
         leading: Icon(icon),
         title: Text(title),

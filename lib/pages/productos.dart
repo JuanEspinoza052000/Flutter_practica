@@ -56,7 +56,6 @@ class _Productos extends State<Productos> {
         } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
           return const Center(child: Text('No products available'));
         } else {
-          // Si los productos están disponibles, los mostramos
           List<Producto> productos = snapshot.data!;
 
           return Container(
@@ -77,12 +76,11 @@ class _Productos extends State<Productos> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  // No usamos Expanded, solo un ListView normal
                   ListView.builder(
                     shrinkWrap:
                         true, // Esto asegura que el ListView ocupe solo el espacio necesario
                     physics:
-                        NeverScrollableScrollPhysics(), // Esto evita el desplazamiento innecesario dentro del ListView
+                        NeverScrollableScrollPhysics(), // Esto evita el desplazamiento innecesario
                     itemCount: productos.length,
                     itemBuilder: (context, index) {
                       final producto = productos[index];
@@ -90,7 +88,7 @@ class _Productos extends State<Productos> {
                         title: Text(producto.nombre),
                         subtitle: Text('${producto.precio} USD'),
                         onTap: () {
-                          // Acción al seleccionar el producto (por ejemplo, ver detalles)
+                          // por agregfar en futuras verciones
                         },
                       );
                     },
@@ -143,13 +141,12 @@ class _Productos extends State<Productos> {
     );
   }
 
-  /// Navbar inferior con navegación
+  /// Navbar inferior
   Widget _buildBottomNavBar(BuildContext context) {
     return Container(
       color: const Color(0xFF3F2305),
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: 15.0, vertical: 10), // Reducir el padding vertical
+        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
         child: GNav(
           backgroundColor: const Color(0xFF3F2305),
           color: const Color(0xFFF5F5F5),
@@ -205,7 +202,6 @@ class _Productos extends State<Productos> {
         await http.get(Uri.parse('http://10.0.2.2:8000/api/productos'));
 
     if (response.statusCode == 200) {
-      // Si la respuesta es exitosa, decodificamos el JSON
       List<dynamic> data = json.decode(response.body);
       return data.map((json) => Producto.fromJson(json)).toList();
     } else {
@@ -230,7 +226,6 @@ Future<List<Producto>> fetchProductos() async {
   }
 }
 
-// Clase personalizada para manejar la búsqueda
 class CustomSearchDelegate extends SearchDelegate {
   @override
   List<Widget> buildActions(BuildContext context) {

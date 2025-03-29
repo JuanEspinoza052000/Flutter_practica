@@ -3,8 +3,8 @@ import 'package:clase2_login/pages/home_page.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:lottie/lottie.dart';
 import 'package:clase2_login/pages/register_page.dart';
-import 'package:http/http.dart' as http; // Importa el paquete http
-import 'dart:convert'; // Para usar json.decode
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class LoginPage extends StatelessWidget {
   final emailController = TextEditingController();
@@ -105,9 +105,8 @@ class LoginPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // Imagen en lugar del icono
                     Image.asset(
-                      'assets/images/sinfondo.png', // Asegúrate de tener esta imagen en tus assets
+                      'assets/images/sinfondo.png',
                       width: 150,
                       height: 150,
                       fit: BoxFit.contain,
@@ -223,8 +222,7 @@ class LoginPage extends StatelessWidget {
                                   behavior: SnackBarBehavior
                                       .floating, // hace que flote la barra
                                   shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                        20), // Bordes redondeados
+                                    borderRadius: BorderRadius.circular(20),
                                   ),
                                   margin: EdgeInsets.all(20),
                                   padding: EdgeInsets.symmetric(

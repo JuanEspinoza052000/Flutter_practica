@@ -12,10 +12,10 @@ class start3 extends StatelessWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFFF5F5F5), // Fully opaque white
-              Color(0xFFF2EAD3), // Fully opaque light beige
-              Color(0xFFDFD7BF), // Fully opaque beige
-              Color(0xFF3F2305) // Fully opaque dark brown
+              Color(0xFFF5F5F5),
+              Color(0xFFF2EAD3),
+              Color(0xFFDFD7BF),
+              Color(0xFF3F2305)
             ],
           ),
         ),
@@ -52,7 +52,7 @@ class start3 extends StatelessWidget {
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
-                    // Aquí puedes agregar la navegación a la página de creación de cuenta
+                    // agregar la navegación a la página de creación de cuenta
                     // Navigator.pushReplacement(
                     //   context,
                     //   MaterialPageRoute(builder: (context) => CreateAccountPage()),

@@ -25,15 +25,13 @@ class Start1 extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Imagen en lugar del icono
                 Image.asset(
-                  'assets/images/sinfondo.png', // Asegúrate de tener esta imagen en tus assets
+                  'assets/images/sinfondo.png',
                   width: 150,
                   height: 150,
                   fit: BoxFit.contain,
                 ).animate().fadeIn(duration: 1000.ms).scale(
                     begin: const Offset(0.8, 0.8), end: const Offset(1, 1)),
-
                 const SizedBox(height: 20),
                 Animate(
                   effects: [

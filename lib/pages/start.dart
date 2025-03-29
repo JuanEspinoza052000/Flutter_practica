@@ -5,9 +5,7 @@ import 'package:clase2_login/startPages/st3.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-// ignore: camel_case_types
 class onBoardingScreen extends StatefulWidget {
-  // ignore: use_super_parameters
   const onBoardingScreen({Key? key}) : super(key: key);
 
   @override
@@ -15,7 +13,6 @@ class onBoardingScreen extends StatefulWidget {
 }
 
 class onBoardingScreenState extends State<onBoardingScreen> {
-  // ignore: prefer_final_fields
   PageController _controller = PageController();
   bool onlastPage = false;
 
